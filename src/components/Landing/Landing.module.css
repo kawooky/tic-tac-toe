@@ -1,5 +1,10 @@
 @import '../root.css';
 
+@font-face {
+    font-family: 'Aerosol';
+    src: url('/Users/youssefkawook/Desktop/Software Development/Projects/tic-tac-toe/public/fonts/Aerosol.ttf');
+}
+
 .landing {
     display: flex;
     flex-direction: column;
@@ -7,5 +12,124 @@
     justify-content: center;
     height: 100vh;
     width: 100vw;
-    background-color: bisque;
+    background-color: var(--three);
+    color: var(--two);
+    font-family: Tahoma, sans-serif;
+}
+
+.top{
+    height: 20vh;
+    width: 100vw;
+    /* background-color: aqua; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+.middle{
+    height: 50vh;
+    width: 100vw;
+    /* background-color: rgb(209, 102, 233); */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.bottom{
+    height: 30vh;
+    width: 100vw;
+    /* background-color: blueviolet; */
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
+}
+
+.header {
+    font-family: Aerosol;
+    font-size: 100px;
+    color: var(--two);
+    margin: 0px;
+}
+
+.turn {
+    height: 50px;
+    margin: 0px;
+    padding: 0px;
+    /* background-color: beige; */
+}
+
+.turn h1 {
+    margin: 0px;
+    padding: 0px;
+}
+
+.score{
+    display: flex;
+    text-align:center;
+    gap: 50px;
+    color: var(--two);
+}
+
+.player1Score{
+    /* background-color: aquamarine; */
+    width: 100px;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+}
+.tieScore{
+    border-right: 3px solid var(--two);
+    border-left: 3px solid var(--two);
+    width: 200px;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.player2Score {
+    /* background-color: aquamarine; */
+    width: 100px;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.playAgainContainer {
+    height: 80px;
+    width: 100vw;
+    /* background-color: bisque; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.playAgainButton {
+    height: 50px;
+    width: 300px;
+    font-family: Tahoma, sans-serif;
+    font-size: 30px;
+    font-weight: bold;
+    color: var(--two);
+    background-color: transparent;
+    border: 3px solid var(--two)
+}
+
+
+
+@media (max-width: 600px) {
+    
 }
