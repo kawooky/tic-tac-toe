@@ -6,7 +6,7 @@ import {faCircle} from '@fortawesome/free-regular-svg-icons'
 
 
 
-export const Board = ({winner, player1, player2, turn, setTurn, r1, r2, r3, c1, c2, c3, d1, d2, setr1, setr2, setr3, setc1, setc2, setc3, setd1, setd2, tl, tm, tr, ml, mm, mr, bl, bm, br, setTl, setTm, setTr, setMl, setMm, setMr, setBl, setBm, setBr}) => {
+export const Board = ({counter, setCounter, winner, player1, player2, turn, setTurn, r1, r2, r3, c1, c2, c3, d1, d2, setr1, setr2, setr3, setc1, setc2, setc3, setd1, setd2, tl, tm, tr, ml, mm, mr, bl, bm, br, setTl, setTm, setTr, setMl, setMm, setMr, setBl, setBm, setBr}) => {
 
 
 
@@ -20,6 +20,7 @@ export const Board = ({winner, player1, player2, turn, setTurn, r1, r2, r3, c1, 
         <div className={styles.board}>
             <div className={styles.row}>
                 <button className={styles.tile} onClick={()=>{
+                    setCounter(counter+1)
                     setTl(turn)
                     if (turn===player1) {
                         setr1(r1+ 1)
@@ -43,11 +44,12 @@ export const Board = ({winner, player1, player2, turn, setTurn, r1, r2, r3, c1, 
                 }} 
                 disabled={tl || winner}
                 >
-                    {tl===player1 && <FontAwesomeIcon icon={faXmark}/>}
+                    {tl===player1 && <FontAwesomeIcon icon={faXmark} size='xl'/>}
                     {tl===player2 && <FontAwesomeIcon icon={faCircle} />}
                 </button>
                 <button className={styles.tile} disabled={tm || winner} onClick={()=>{
                     setTm(turn)
+                    setCounter(counter+1)
                      if (turn===player1) {
                         setr1(r1+ 1)
                         setc2(c2+1)
@@ -67,11 +69,12 @@ export const Board = ({winner, player1, player2, turn, setTurn, r1, r2, r3, c1, 
                     }
 
                 }}>
-                    {tm===player1 && <FontAwesomeIcon icon={faXmark}/>}
+                    {tm===player1 && <FontAwesomeIcon icon={faXmark} size='xl'/>}
                     {tm===player2 && <FontAwesomeIcon icon={faCircle} />}
                 </button>
                 <button className={styles.tile} disabled={tr || winner} onClick={()=>{
                     setTr(turn)
+                    setCounter(counter+1)
                      if (turn===player1) {
                         setr1(r1+ 1)
                         setc3(c3+1)
@@ -93,7 +96,7 @@ export const Board = ({winner, player1, player2, turn, setTurn, r1, r2, r3, c1, 
                     }
 
                 }}>
-                    {tr===player1 && <FontAwesomeIcon icon={faXmark}/>}
+                    {tr===player1 && <FontAwesomeIcon icon={faXmark} size='xl'/>}
                     {tr===player2 && <FontAwesomeIcon icon={faCircle} />}
                 </button>
             </div>
@@ -105,6 +108,7 @@ export const Board = ({winner, player1, player2, turn, setTurn, r1, r2, r3, c1, 
             <div className={styles.row}>
                 <button className={styles.tile} disabled={ml || winner} onClick={()=>{
                     setMl(turn)
+                    setCounter(counter+1)
                     if (turn===player1) {
                         setr2(r2+1)
                         setc1(c1+1)
@@ -123,11 +127,12 @@ export const Board = ({winner, player1, player2, turn, setTurn, r1, r2, r3, c1, 
 
                     
                 }}>
-                    {ml===player1 && <FontAwesomeIcon icon={faXmark}/>}
+                    {ml===player1 && <FontAwesomeIcon icon={faXmark} size='xl'/>}
                     {ml===player2 && <FontAwesomeIcon icon={faCircle} />}
                 </button>
                 <button className={styles.tile} disabled={mm || winner} onClick={()=>{
                     setMm(turn)
+                    setCounter(counter+1)
                     if (turn===player1) {
                         setr2(r2+1)
                         setc2(c2+1)
@@ -148,11 +153,12 @@ export const Board = ({winner, player1, player2, turn, setTurn, r1, r2, r3, c1, 
                         setTurn(player1)
                     }
                 }}>
-                    {mm===player1 && <FontAwesomeIcon icon={faXmark}/>}
+                    {mm===player1 && <FontAwesomeIcon icon={faXmark} size='xl'/>}
                     {mm===player2 && <FontAwesomeIcon icon={faCircle} />}
                 </button>
                 <button className={styles.tile} disabled={mr || winner} onClick={()=>{
                     setMr(turn)
+                    setCounter(counter+1)
                     if (turn===player1) {
                         setr2(r2+1)
                         setc3(c3+1)
@@ -169,7 +175,7 @@ export const Board = ({winner, player1, player2, turn, setTurn, r1, r2, r3, c1, 
                         setTurn(player1)
                     }
                 }}>
-                    {mr===player1 && <FontAwesomeIcon icon={faXmark}/>}
+                    {mr===player1 && <FontAwesomeIcon icon={faXmark} size='xl'/>}
                     {mr===player2 && <FontAwesomeIcon icon={faCircle} />}
                 </button>
             </div>
@@ -177,6 +183,7 @@ export const Board = ({winner, player1, player2, turn, setTurn, r1, r2, r3, c1, 
             <div className={styles.row}>
             <button className={styles.tile} disabled={bl || winner} onClick={()=>{
                 setBl(turn)
+                setCounter(counter+1)
                     if (turn===player1) {
                         setr3(r3+ 1)
                         setc1(c1+1)
@@ -196,11 +203,12 @@ export const Board = ({winner, player1, player2, turn, setTurn, r1, r2, r3, c1, 
                     }
 
                 }}>
-                    {bl===player1 && <FontAwesomeIcon icon={faXmark}/>}
+                    {bl===player1 && <FontAwesomeIcon icon={faXmark} size='xl'/>}
                     {bl===player2 && <FontAwesomeIcon icon={faCircle} />}
                 </button>
                 <button className={styles.tile} disabled={bm || winner} onClick={()=>{
                     setBm(turn)
+                    setCounter(counter+1)
                      if (turn===player1) {
                         setr3(r3+ 1)
                         setc2(c2+1)
@@ -219,11 +227,12 @@ export const Board = ({winner, player1, player2, turn, setTurn, r1, r2, r3, c1, 
                     }
 
                 }}>
-                    {bm===player1 && <FontAwesomeIcon icon={faXmark}/>}
+                    {bm===player1 && <FontAwesomeIcon icon={faXmark} size='xl'/>}
                     {bm===player2 && <FontAwesomeIcon icon={faCircle} />}
                 </button>
                 <button className={styles.tile} disabled={br || winner} onClick={()=>{
                     setBr(turn)
+                    setCounter(counter+1)
                      if (turn===player1) {
                         setr3(r3+ 1)
                         setc3(c3+1)
@@ -244,7 +253,7 @@ export const Board = ({winner, player1, player2, turn, setTurn, r1, r2, r3, c1, 
                     }
 
                 }}>
-                    {br===player1 && <FontAwesomeIcon icon={faXmark}/>}
+                    {br===player1 && <FontAwesomeIcon icon={faXmark} size='xl'/>}
                     {br===player2 && <FontAwesomeIcon icon={faCircle} />}
                 </button>
             </div>
