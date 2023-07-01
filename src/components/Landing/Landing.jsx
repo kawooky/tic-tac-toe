@@ -73,7 +73,10 @@ export const Landing = () => {
                         <FontAwesomeIcon icon={faCircle}/>
                     </h1>
                     }                
-                    {(winner && winner!=='Tie') && <h1><FontAwesomeIcon icon={faXmark} size='xl'/> Wins!</h1>}
+                    {(winner===player1 && winner!=='Tie') && <h1><FontAwesomeIcon icon={faXmark} size='xl'/> Wins!</h1>}
+                    {(winner===player2 && winner!=='Tie') && <h1><FontAwesomeIcon icon={faCircle}/> Wins!</h1>}
+
+
                     {winner==='Tie' && <h1>It's a Tie</h1>}
                 </div>
             </div>
@@ -90,11 +93,13 @@ export const Landing = () => {
                     {(winner || counter===9) && 
                     <button className={styles.playAgainButton} onClick={() =>{
                         if (starter==player1) {
+                            setTurn(player2)
                             setStarter(player2)
-                            setTurn(starter)
+
+                            console.log('where i should be')
                         } else {
+                            setTurn(player1)
                             setStarter(player1)
-                            setTurn(starter)
                         }
                         setWinner(undefined)
                         setCounter(0)
@@ -126,7 +131,7 @@ export const Landing = () => {
 
             <div className={styles.score}>
                 <div className={styles.player1Score}>
-                <h1><FontAwesomeIcon icon={faCircle} /></h1>
+                <h1><FontAwesomeIcon icon={faXmark} size='xl'/></h1>
                 <h1>{score[0]}</h1>
                 </div>
                 <div className={styles.tieScore}>
@@ -134,11 +139,10 @@ export const Landing = () => {
                 <h1>{score[1]}</h1>
                 </div>
                 <div className={styles.player2Score}>
-                <h1><FontAwesomeIcon icon={faXmark} size='xl'/></h1>
+                <h1><FontAwesomeIcon icon={faCircle} /></h1>
                 <h1>{score[2]}</h1>
                 </div>
             </div>
-
             </div>
 
 
